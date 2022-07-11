@@ -1,0 +1,40 @@
+{
+    "valoresDolar": [
+        {
+            "id": 0,
+            "tipo": "oficial",
+            "valor": {
+                "compra": 126.75,
+                "venta": 133.75
+            }
+        },
+
+        {
+            "id": 1,
+            "tipo": "blue",
+            "valor": {
+                "compra": 263.00,
+                "venta": 268.00
+            }
+        },
+        {
+            "id": 2,
+            "tipo": "mep",
+            "valor": {
+                "compra": 285.54,
+                "venta": 285.87
+            }
+        },
+        {
+            "id": 3,
+            "tipo": "liqui",
+            "valor": {
+                "compra": 297.76,
+                "venta": 298.55
+            }
+        }
+        
+        
+
+    ]
+}
