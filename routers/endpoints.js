@@ -1,6 +1,5 @@
 const {Router} = require('express');
 const router = Router();
-
 const dolarPrueba = require("../notasDePrueba.json")
 
 router.get('/', (request,response) =>{
@@ -12,12 +11,10 @@ router.get('/api/dolar', (request, response) => {
 })
 
 router.get('/api/dolar/:id', (request, response) => {
-    const id = Number(request.params.id)
-    const dolar = dolarPrueba.valoresDolar.find(dolar => dolar.id === id)
+  const id = Number(request.params.id),
+        dolar = dolarPrueba.valoresDolar.find(dolar => dolar.id === id);
     
     response.json(dolar)
 })
-
-
 
 module.exports = router
