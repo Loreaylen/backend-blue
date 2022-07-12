@@ -1,8 +1,8 @@
-const express = require('express')
-const app = express()
-const cors = require("cors");
-const endpoints = require('./routers/endpoints')
-const PORT = process.env.PORT || 3001;
+const express = require('express'),
+      app = express(),
+      cors = require("cors"),
+      endpoints = require('./routers/endpoints'),
+      PORT = process.env.PORT || 3001;
 
 app.use('/', endpoints)
 app.use(cors({
