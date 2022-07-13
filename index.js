@@ -4,7 +4,8 @@ const express = require('express'),
       endpoints = require('./routers/endpoints'),
       PORT = process.env.PORT || 3001;
 
-require('./models/spreadsheet')
+require('dotenv').config();
+require('./models/spreadsheet');
 
 app.use('/', endpoints)
 app.use(cors({
