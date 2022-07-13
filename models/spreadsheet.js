@@ -7,14 +7,19 @@ async function accesoGoogleSheet() {
     client_email: process.env.GOOGLE_ACCOUNT,
     private_key: process.env.PRIVATE_KEY,
   });
-  await doc.loadInfo();
-
-  const sheet = doc.sheetsByIndex[0],
-        rows  = await sheet.getRows();
-
-  console.log(rows[0]['Título']);
-
+  await doc.loadInfo()
+  const test = doc.sheetsByIndex[0]
+  return test
 }
 
-accesoGoogleSheet()
+async function run() {
+ const x = await accesoGoogleSheet()
+ console.log(x)
+}
+
+
+module.exports = {
+  accesoGoogleSheet,
+  run,
+}
 

@@ -16,4 +16,11 @@ router.get('/api/dolar/:id', (request, response) => {
     response.json(dolar)
 })
 
+router.get('/api/excel', (request, response)=> {
+ 
+ response.send('<h2>Esto es excel</h2>')
+  
+})
+
+
 module.exports = router

@@ -6,6 +6,7 @@ const express = require('express'),
 
 require('dotenv').config();
 require('./models/spreadsheet');
+require('./controllers/baseControl')
 
 app.use('/', endpoints)
 app.use(cors({
