@@ -8,18 +8,8 @@ async function accesoGoogleSheet() {
     private_key: process.env.PRIVATE_KEY,
   });
   await doc.loadInfo()
-  const test = doc.sheetsByIndex[0]
-  return test
+  return doc
+
 }
 
-async function run() {
- const x = await accesoGoogleSheet()
- console.log(x)
-}
-
-
-module.exports = {
-  accesoGoogleSheet,
-  run,
-}
-
+module.exports = accesoGoogleSheet;
