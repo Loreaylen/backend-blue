@@ -1,18 +1,16 @@
 const {Router} = require('express'),
       router = Router(),
-      llamadaExcel = require('../models/spreadsheet'),
-      dolarPrueba = require("../notasDePrueba.json");
+      dolarScrp = require('./scraping');
+      // llamadaExcel = require('../models/spreadsheet'),
+      // dolarPrueba = require("../notasDePrueba.json"),
 
-router.get('/', (request,response) =>{
+router.get('/', (request,response) => {
   response.send('<h1>Esto es localhost</h1>')
 })
 
 router.get('/api/dolar', (request, response) => {
-  const fecha = new Date(),
-        minutes = fecha.getMinutes(),
-        formatDate = fecha.getDate() + '/' + (fecha.getMonth() + 1) + ' ' + fecha.getHours() + ':' + (minutes < 10 ? `0${minutes}` : minutes);
-
-  llamadaExcel()
+  dolarScrp.then(values => response.json(values));
+/*   llamadaExcel()
   .then(document => document.sheetsByIndex[0])
   .then(sheet => sheet.getRows())
   .then(row => {
@@ -31,6 +29,7 @@ router.get('/api/dolar', (request, response) => {
     return response.json(values);
   })
   .catch(err => response.send(err))
+ */
 
 })
 
